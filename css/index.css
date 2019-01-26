@@ -1,0 +1,81 @@
+/* ----------------------------- *\
+            GENERALES
+\* ----------------------------- */
+
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    font-family: system-ui, sans-serif;
+}
+
+.contenedor {
+    max-width: 1024px;
+    min-width: 320px;
+    margin: 0 auto;
+}
+
+/* ----------------------------- *\
+        ENCABEZADO (OLAS)
+\* ----------------------------- */
+
+header {
+    height: 300px;
+    background-color: #0f9bf6;
+    overflow: hidden;
+    position: relative;
+}
+
+    .header-titulo {
+        height: 100%;
+        font-size: 3.5em;
+        color: rgba(255,255,255,.8);
+        margin: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .header-ola {
+        width: calc(100vw + 345px);
+        height: 427px;
+        background-image: url("../sprite/olas.png");
+
+        position: absolute;
+        left: -185px;
+        bottom: -200px;
+
+        animation-name: ola;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-timing-function: ease-in-out;
+    }
+    .header-ola.tipo-a {
+        background-position: 0 -854px;
+    }
+    .header-ola.tipo-b {
+        background-position: 0 -427px;
+        animation-delay: 1s;
+    }
+    .header-ola.tipo-c {
+        background-position: 0 0;
+        animation-delay: 2s;
+    }
+
+    @keyframes ola {
+        0%{
+            transform: translate(0, 0);
+        }
+        50%{
+            transform: translate(-160px, 30px);
+        }
+        100%{
+            transform: translate(160px, -50px);
+        }
+    }
+
+/* ----------------------------- *\
+        ENCABEZADO (OLAS)
+\* ----------------------------- */
