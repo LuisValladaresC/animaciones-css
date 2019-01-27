@@ -3,16 +3,15 @@
 \* ----------------------------- */
 
 body {
-    height: 100%;
     width: 100%;
+    height: 100%;
     margin: 0;
     font-family: system-ui, sans-serif;
-}
-
-.contenedor {
-    max-width: 1024px;
-    min-width: 320px;
-    margin: 0 auto;
+    
+    display: grid;
+    grid-template: 300px 200px / minmax(320px, 1024px);
+    grid-template-areas: "header" "saludo";
+    justify-content: center
 }
 
 /* ----------------------------- *\
@@ -20,7 +19,8 @@ body {
 \* ----------------------------- */
 
 header {
-    height: 300px;
+    grid-area: header;
+    width: 100%;
     background-color: #0f9bf6;
     overflow: hidden;
     position: relative;
@@ -38,7 +38,7 @@ header {
     }
 
     .header-ola {
-        width: calc(100vw + 345px);
+        width: 2402px;
         height: 427px;
         background-image: url("../sprite/olas.png");
 
@@ -47,35 +47,138 @@ header {
         bottom: -200px;
 
         animation-name: ola;
-        animation-duration: 5s;
+        animation-duration: 10s;
         animation-iteration-count: infinite;
         animation-direction: alternate;
         animation-timing-function: ease-in-out;
     }
-    .header-ola.tipo-a {
+    .header-ola.a {
         background-position: 0 -854px;
     }
-    .header-ola.tipo-b {
+    .header-ola.b {
         background-position: 0 -427px;
         animation-delay: 1s;
     }
-    .header-ola.tipo-c {
+    .header-ola.c {
         background-position: 0 0;
         animation-delay: 2s;
     }
 
-    @keyframes ola {
-        0%{
-            transform: translate(0, 0);
-        }
-        50%{
-            transform: translate(-160px, 30px);
-        }
-        100%{
-            transform: translate(160px, -50px);
-        }
+@keyframes ola {
+    0%{
+        transform: translate(0, 0);
     }
+    50%{
+        transform: translate(-160px, 30px);
+    }
+    100%{
+        transform: translate(160px, -50px);
+    }
+}
 
 /* ----------------------------- *\
-        ENCABEZADO (OLAS)
+        SECCION SALUDO
 \* ----------------------------- */
+
+.seccion-saludo {
+    grid-area: saludo;
+    border: #4fb6f9 2px solid;
+    box-sizing: border-box;
+    position: relative;
+    
+    display: flex;
+    align-items: center;
+}
+
+    .saludo-circulo {
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+        background-color: #4fb6f9;
+        position: absolute;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+
+        animation: 8s ease-in 1s infinite alternate;
+        will-change: opacity;
+
+    }
+    .saludo-circulo.a {
+        left: 10px;
+        animation-name: circulo-a;
+    }
+    .saludo-circulo.b {
+        right: 10px;
+        animation-name: circulo-b;
+    }
+    .saludo-circulo.c {
+        opacity: 0;
+        width: 300px;
+        background-color: #0f9bf6;
+        left: calc(50% - 150px);
+        animation-name: circulo-c;
+    }
+
+        .saludo {
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            will-change: opacity;
+        }
+
+    #btnPausePlay {
+        font-size: 28px;
+        cursor: pointer;
+
+        position: absolute;
+        bottom: 5px;
+        left: 5px;
+        color: #0f9bf6;
+
+        transition: 200ms;
+    }
+
+    #btnPausePlay:active {
+        transform: scale(0.9)
+    }
+
+@keyframes circulo-a {
+    25%{
+        opacity: 1;
+    }
+    50%{
+        left: calc(50% - 150px);
+        width: 150px;
+    }
+    75%, 100%{
+        left: calc(50% - 150px);
+        width: 300px;
+        opacity: 0;
+    }
+}
+
+@keyframes circulo-b {
+    25%{
+        opacity: 1;
+    }
+    50%{
+        right: calc(50% - 150px);
+        width: 150px;
+    }
+    75%, 100%{
+        right: calc(50% - 150px);
+        width: 300px;
+        opacity: 0;
+    }
+}
+
+@keyframes circulo-c {
+    60%{
+        opacity: 0;
+    }
+    90%, 100%{
+        opacity: 1;
+    }
+}
