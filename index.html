@@ -8,24 +8,52 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 </head>
 <body>
-    <header>
-        <h1 class="header-titulo">Animaciones CSS</h1>
-        <div id="circuloA" class="header-ola a"></div>
-        <div class="header-ola b"></div>
-        <div class="header-ola c"></div>
-    </header>
+    <div class="grid-container">
+        <header class="header">
+            <h1 class="header-titulo">Animaciones CSS</h1>
+            <div class="header-ola a"></div>
+            <div class="header-ola b"></div>
+            <div class="header-ola c"></div>
+        </header>
+    
+        <section class="seccion-menu">
+            <p class="menu-titulo">Animaciones Diseñadas</p>
+            <div class="menu-container">
+                <a class="menu-link" id="btnOlas">Olas Animadas</a>
+                <a class="menu-link" id="btnModal">Modal Animado</a>
+                <a class="menu-link" id="btnSaludo">Saludo Animado</a>
+                <a class="menu-link" id="btnLogo">Logo Animado</a>
+                <a class="menu-link" id="btnSprite">Menu Animado</a>
+                <a class="menu-link" id="btnSprite">Sprite Animado</a>
+            </div>
+        </section>
+        
+        <section class="seccion-saludo">
+            <div class="saludo-circulo a" id="circulo">
+                <p class="saludo">Hola</p>
+            </div>
+            <div class="saludo-circulo b">
+                <p class="saludo">Mundo</p>
+            </div>
+            <div class="saludo-circulo c">
+                <p class="saludo">Bienvenido!!</p>
+            </div>
+            <i id="btnPausePlay" class="fas fa-pause-circle"></i>
+        </section>
 
-    <section class="seccion-saludo">
-        <div class="saludo-circulo a" id="circulo">
-            <p class="saludo">Hola</p>
+        <footer>
+
+        </footer>
+    </div>
+
+    <section class="seccion-modal" id="seccionModal">
+        <div class="capa" id="capaModal">
+            <div class="modal" id="modal">
+                <p class="modal-titulo">Modal Animado</p>
+                <p class="modal-contenido">Para cerrar el modal presiona el boton cerrar o da click en cualquier parte afuera del mismo.</p>
+                <button class="modal-boton" id="btnCerrarModal">Cerrar</button>
+            </div>
         </div>
-        <div class="saludo-circulo b">
-            <p class="saludo">Mundo</p>
-        </div>
-        <div class="saludo-circulo c">
-            <p class="saludo">Bienvenido!!</p>
-        </div>
-        <i id="btnPausePlay" class="fas fa-pause-circle"></i>
     </section>
 
     <script src="./js/index.js"></script>
