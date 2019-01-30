@@ -17,8 +17,9 @@ body {
     background: linear-gradient(to bottom, #4fb6f9 50%, #0f9bf6 100%);
 
     display: grid;
-    grid-template: 300px 200px 250px 250px / 1fr minmax(320px, 1024px) 1fr;
+    grid-template: 280px 200px 230px 180px / 1fr minmax(320px, 1024px) 1fr;
     grid-template-areas: "header header header" ". menu ." ". saludo ." ". footer .";
+    grid-gap: 10px;
     justify-content: center;
 }
 
@@ -170,10 +171,10 @@ body {
         will-change: opacity;
     }
     .saludo-circulo.a {
-        left: 10px;
+        left: 15px;
     }
     .saludo-circulo.b {
-        right: 10px;
+        right: 15px;
     }
     .saludo-circulo.c {
         opacity: 0;
@@ -190,12 +191,12 @@ body {
 
     #btnPausePlay {
         font-size: 28px;
+        color: rgba(255, 255, 255, .6);
         cursor: pointer;
 
         position: absolute;
         bottom: 5px;
         left: 5px;
-        color: rgba(255, 255, 255, .6);
 
         transition: 200ms;
     }
@@ -303,10 +304,139 @@ body {
 }
 
 /* ----------------------------- *\
-        PIE DE PAGINA
+        SECCION PLATZI
 \* ----------------------------- */
 
 footer {
     grid-area: footer;
     border-radius: 5px 5px 0 0;
+
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.seccion-platzi {
+    height: 120px;
+    align-self: center;
+}
+
+    .platzi-parrafo {
+        font-size: .9em;
+        margin-left: 15px;
+
+        font-weight: 500;
+        color: rgba(0,0,0,.8)
+    }
+
+    .platzi-link {
+        display: flex;
+    }
+
+        .platzi-logo {
+            width: 50px;
+            height: 50px;
+            margin: 0 0 0 20px; 
+            transform: rotate(45deg);
+
+            animation: logo-platzi 2s alternate infinite ease-in-out;
+        }
+        
+            .logo-top {
+                width: 100%;
+                height: 60%;
+                
+                border-radius: 10px 10px 0 0;
+                border: 12px solid #87c739;
+                border-bottom: none;
+                box-sizing: border-box;
+
+                animation: logo-platzi-top 2s alternate infinite 2.4s linear;
+            }
+            
+            .logo-bottom {
+                width: 100%;
+                height: 40%;
+
+                border-radius: 0 0 10px 10px;
+                border: 12px solid #87c739;
+                border-top: none;
+                box-sizing: border-box;
+            }
+        
+        .link-texto {
+            margin-left: 10px;
+            color: rgba(0, 0, 0, 0.7);
+
+            font-size: 4em;
+            font-weight: 700;
+            line-height: 45px;
+            letter-spacing: 2px;
+        }
+
+@keyframes logo-platzi {
+    0% {
+        transform: rotate(45deg) scale(1);
+    }
+    60% {
+        transform: rotate(45deg) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(-315deg) scale(0.4);
+        opacity: 0;
+    }
+}
+
+@keyframes logo-platzi-top {
+    40% {
+        width: 100%;
+    }
+    60%, 100% {
+        width: calc(100% - 10px);
+    }
+}
+
+/* ----------------------------- *\
+        SECCION CORAZON
+\* ----------------------------- */
+
+.seccion-corazon {
+    height: 120px;
+    justify-self: flex-end;
+    align-self: center;
+    position: relative;
+}
+
+    .corazon-parrafo {
+        font-size: .9em;
+        font-weight: 500;
+        color: rgba(0,0,0,.8);
+        margin-right: 15px;
+    }
+
+    .corazon {
+        width: 100px;
+        height: 100px;
+        cursor: pointer;
+        background-image: url('../sprite/corazon.png');
+        
+        position: absolute;
+        bottom: -5px;
+        left: calc(50% - 50px);
+    }
+
+    .corazon.is-liked {
+        animation-name: animacion-corazon;
+        animation-duration: .8s;
+        animation-timing-function: steps(28);
+        animation-fill-mode: forwards;
+    }
+
+@keyframes animacion-corazon {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position-x: right;
+    }
 }

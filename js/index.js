@@ -1,3 +1,7 @@
+/* ----------------------------- *\
+        SECCION SALUDO
+\* ----------------------------- */
+
 const circulos = Array.from(document.getElementsByClassName("saludo-circulo"));
 const opciones = {
     duration: 8000,
@@ -60,27 +64,42 @@ function cambiarIcono(iconoActual, iconoNueva) {
     btnAnimacion.classList.add(iconoNueva);
 }
 
-// 
-// 
+/* ----------------------------- *\
+        SECCION MODAL
+\* ----------------------------- */
 
 const modal = document.getElementById("modal")
 const capaModal = document.getElementById("capaModal")
 const seccionModal = document.getElementById("seccionModal")
 
-const abrirModal = document.getElementById("btnModal");
-const cerrarModal = document.getElementById("btnCerrarModal");
+const btnAbrirModal = document.getElementById("btnModal");
+const btnCerrarModal = document.getElementById("btnCerrarModal");
 
 const tiempoAnimacion = 1000;
 
-abrirModal.addEventListener("click", () => {
+btnAbrirModal.addEventListener("click", () => {
     seccionModal.style.transform = "initial"
     capaModal.style.transition = tiempoAnimacion + "ms";
     capaModal.classList.add("activa");
     modal.style.animation = 'modalIn ' + tiempoAnimacion + 'ms forwards';
 })
 
-cerrarModal.addEventListener("click", () => {
+capaModal.addEventListener("click", cerrarModal);
+btnCerrarModal.addEventListener("click", cerrarModal);
+
+function cerrarModal() {
     capaModal.classList.remove("activa");
     modal.style.animation = 'modalOut ' + tiempoAnimacion +'ms forwards ease';
     setTimeout(() => { seccionModal.style.transform = "translateY(-3000px)" }, tiempoAnimacion);
-})
+}
+
+
+/* ----------------------------- *\
+        SECCION CORAZON
+\* ----------------------------- */
+
+const corazon = document.getElementById('corazon');
+            
+corazon.addEventListener('click', () => {
+    corazon.classList.toggle('is-liked');
+});
