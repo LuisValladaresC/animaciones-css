@@ -1,0 +1,44 @@
+/* ----------------------------- *\
+        SECCION CORAZON
+\* ----------------------------- */
+
+.seccion-corazon {
+    height: 120px;
+    justify-self: flex-end;
+    align-self: center;
+    position: relative;
+}
+
+    .corazon-parrafo {
+        font-size: .9em;
+        font-weight: 500;
+        color: rgba(0,0,0,.8);
+        margin-right: 15px;
+    }
+
+    .corazon {
+        width: 100px;
+        height: 100px;
+        cursor: pointer;
+        background-image: url('../sprite/corazon.png');
+        
+        position: absolute;
+        bottom: -5px;
+        left: calc(50% - 50px);
+    }
+
+    .corazon.is-liked {
+        animation-name: animacion-corazon;
+        animation-duration: .8s;
+        animation-timing-function: steps(28);
+        animation-fill-mode: forwards;
+    }
+
+@keyframes animacion-corazon {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position-x: right;
+    }
+}

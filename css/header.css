@@ -1,0 +1,64 @@
+/* ----------------------------- *\
+        ENCABEZADO (OLAS)
+\* ----------------------------- */
+
+.header {
+    grid-area: header;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+
+    margin-top: 0;
+    border-radius: 0;
+    background-color: #0f9bf6;
+}
+
+    .header-titulo {
+        height: 100%;
+        font-size: 4em;
+        color: rgba(255,255,255,.8);
+        margin: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .header-ola {
+        width: 2402px;
+        height: 427px;
+        background-image: url("../sprite/olas.png");
+
+        position: absolute;
+        left: -185px;
+        bottom: -200px;
+
+        animation-name: ola;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-timing-function: ease-in-out;
+    }
+    .header-ola.a {
+        background-position: 0 -854px;
+    }
+    .header-ola.b {
+        background-position: 0 -427px;
+        animation-delay: 1s;
+    }
+    .header-ola.c {
+        background-position: 0 0;
+        animation-delay: 2s;
+    }
+
+@keyframes ola {
+    0%{
+        transform: translate(0, 0);
+    }
+    50%{
+        transform: translate(-160px, 30px);
+    }
+    100%{
+        transform: translate(160px, -50px);
+    }
+}

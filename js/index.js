@@ -65,6 +65,27 @@ function cambiarIcono(iconoActual, iconoNueva) {
 }
 
 /* ----------------------------- *\
+        SECCION MENU
+\* ----------------------------- */
+
+const seccionesDeMenu = Array.from(document.getElementsByClassName("menu-id"));
+const btnOlas = document.getElementById("btnOlas");
+const btnMenu = document.getElementById("btnMenu");
+const btnSaludo = document.getElementById("btnSaludo");
+const btnLogo = document.getElementById("btnLogo");
+const btnSprite = document.getElementById("btnSprite");
+
+btnOlas.addEventListener("transitionend", () => activarIdSeccion(0))
+btnMenu.addEventListener("transitionend", () => activarIdSeccion(1))
+btnSaludo.addEventListener("transitionend", () => activarIdSeccion(2))
+btnLogo.addEventListener("transitionend", () => activarIdSeccion(3))
+btnSprite.addEventListener("transitionend", () => activarIdSeccion(4))
+
+function activarIdSeccion(numero) {
+    seccionesDeMenu[numero].classList.toggle("activo")
+}
+
+/* ----------------------------- *\
         SECCION MODAL
 \* ----------------------------- */
 

@@ -1,0 +1,93 @@
+/* ----------------------------- *\
+        SECCION PLATZI
+\* ----------------------------- */
+
+footer {
+    grid-area: footer;
+    border-radius: 5px 5px 0 0;
+
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.seccion-platzi {
+    height: 120px;
+    align-self: center;
+    position: relative;
+}
+
+    .platzi-parrafo {
+        font-size: .9em;
+        margin-left: 15px;
+
+        font-weight: 500;
+        color: rgba(0,0,0,.8)
+    }
+
+    .platzi-link {
+        display: flex;
+    }
+
+        .platzi-logo {
+            width: 50px;
+            height: 50px;
+            margin: 0 0 0 20px; 
+            transform: rotate(45deg);
+
+            animation: logo-platzi 2s alternate infinite ease-in-out;
+        }
+        
+            .logo-top {
+                width: 100%;
+                height: 60%;
+                
+                border-radius: 10px 10px 0 0;
+                border: 12px solid #87c739;
+                border-bottom: none;
+                box-sizing: border-box;
+
+                animation: logo-platzi-top 2s alternate infinite 2.4s linear;
+            }
+            
+            .logo-bottom {
+                width: 100%;
+                height: 40%;
+
+                border-radius: 0 0 10px 10px;
+                border: 12px solid #87c739;
+                border-top: none;
+                box-sizing: border-box;
+            }
+        
+        .link-texto {
+            margin-left: 10px;
+            color: rgba(0, 0, 0, 0.7);
+
+            font-size: 4em;
+            font-weight: 700;
+            line-height: 45px;
+            letter-spacing: 2px;
+        }
+
+@keyframes logo-platzi {
+    0% {
+        transform: rotate(45deg) scale(1);
+    }
+    60% {
+        transform: rotate(45deg) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(-315deg) scale(0.4);
+        opacity: 0;
+    }
+}
+
+@keyframes logo-platzi-top {
+    40% {
+        width: 100%;
+    }
+    60%, 100% {
+        width: calc(100% - 10px);
+    }
+}

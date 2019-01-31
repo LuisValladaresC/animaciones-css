@@ -1,0 +1,30 @@
+/* ----------------------------- *\
+            GENERALES
+\* ----------------------------- */
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-family: system-ui, sans-serif;
+
+    background-color: #0f9bf6;
+}
+
+.grid-container {
+    margin: 0 auto;
+    max-width: 1830px;
+    background: linear-gradient(to bottom, #4fb6f9 50%, #0f9bf6 100%);
+
+    display: grid;
+    grid-template: 280px 200px 230px 180px / 1fr minmax(320px, 1024px) 1fr;
+    grid-template-areas: "header header header" ". menu ." ". saludo ." ". footer .";
+    grid-gap: 10px;
+    justify-content: center;
+}
+
+.grid-container > * {
+    margin-top: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, .1);
+}
