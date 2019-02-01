@@ -27,12 +27,13 @@
     .header-ola {
         width: 2402px;
         height: 427px;
-        background-image: url("../sprite/olas.png");
+        background-image: url("../sprite/olas/olas-2402.png");
 
         position: absolute;
         left: -185px;
         bottom: -200px;
 
+        /* Asigna la animacion de ola a los elemento con esta clase */
         animation-name: ola;
         animation-duration: 10s;
         animation-iteration-count: infinite;
@@ -51,6 +52,7 @@
         animation-delay: 2s;
     }
 
+/* ANIMACION DE OLAS */
 @keyframes ola {
     0%{
         transform: translate(0, 0);
@@ -62,3 +64,65 @@
         transform: translate(160px, -50px);
     }
 }
+
+/* MEDIA QUERIES DE SECCION HEADER */
+@media screen and (max-width: 1024px) {
+        .header-titulo {
+            font-size: 3.5em;
+        }
+    
+        .header-ola {
+            width: 1609px;
+            height: 286px;
+            background-image: url("../sprite/olas/olas-1609.png");
+    
+            bottom: -100px;
+        }
+        .header-ola.a {
+            background-position: 0 -572px;
+        }
+        .header-ola.b {
+            background-position: 0 -286px;
+        }
+}
+
+@media screen and (max-width: 768px) {
+        .header-titulo {
+            font-size: 3em;
+        }
+    
+        .header-ola {
+            width: 1352px;
+            height: 241px;
+            background-image: url("../sprite/olas/olas-1352.png");
+    
+            bottom: -80px;
+        }
+        .header-ola.a {
+            background-position: 0 -482px;
+        }
+        .header-ola.b {
+            background-position: 0 -241px;
+        }
+}
+
+@media screen and (max-width: 480px) {
+        .header-titulo {
+            font-size: 2.2em;
+        }
+    
+        .header-ola {
+            width: 1055px;
+            height: 188px;
+            background-image: url("../sprite/olas/olas-1055.png");
+    
+            bottom: -60px;
+        }
+        .header-ola.a {
+            background-position: 0 -375px;
+        }
+        .header-ola.b {
+            background-position: 0 -188px;
+        }
+}
+/* MEDIA QUERIES DE SECCION HEADER */

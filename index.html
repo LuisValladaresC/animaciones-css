@@ -9,16 +9,22 @@
 </head>
 <body>
     <div class="grid-container">
+        <!-- ENCABEZADO / OLAS ANIMADAS -->
         <header class="header">
             <h1 class="header-titulo">Animaciones CSS</h1>
+            <!-- Contenedores con un Background-Image de Ola. Se les aplico un @keyframes que modifica alternativamente su posicion de izquierda a derecha y de arriba a abajo para imitar una ola -->
             <div class="header-ola a"></div>
             <div class="header-ola b"></div>
             <div class="header-ola c"></div>
+            <!-- Identinficador de seccion (visible desde la Seccion de Menu) -->
             <div class="menu-id"></div>
         </header>
     
+        <!-- SECCION DE MENU / BOTONES CON ANIMACION -->
         <section class="seccion-menu">
             <p class="menu-titulo">Animaciones Diseñadas</p>
+            <!-- Grupo de Enlaces / Botones. Se les aplico una transformacion en su estado :hover que los escala un 50% -->
+            <!-- La transicion detona un evento JS que hace visible el Identificador de Seccion correspondiente -->
             <div class="menu-container">
                 <a class="menu-link" id="btnOlas">Olas Animadas</a>
                 <a class="menu-link" id="btnModal">Modal Animado</a>
@@ -27,10 +33,13 @@
                 <a class="menu-link" id="btnLogo">Logo Animado</a>
                 <a class="menu-link" id="btnSprite">Sprite Animado</a>
             </div>
+            <!-- Identinficador de seccion (visible desde la Seccion de Menu) -->
             <div class="menu-id"></div>
         </section>
         
+        <!-- SECCION CON SALUDO / CIRCULOS ANIMADOS -->
         <section class="seccion-saludo">
+            <!-- Contenedores / Circulos. Se les aplico una animacion mediante JS que cambia su posicion, ancho y visibilidad -->
             <div class="saludo-circulo a" id="circulo">
                 <p class="saludo">Hola</p>
             </div>
@@ -40,35 +49,48 @@
             <div class="saludo-circulo c">
                 <p class="saludo">Bienvenido!!</p>
             </div>
+            <!-- Modifica el estado de las animaciones asignadas a los contenedores anteriores mediante JS -->
             <i id="btnPausePlay" class="fas fa-pause-circle"></i>
+            <!-- Identinficador de seccion (visible desde la Seccion de Menu) -->
             <div class="menu-id"></div>
         </section>
 
         <footer>
+            <!-- SECCION DE PLATZI / LOGO ANIMADO -->
             <section class="seccion-platzi">
                 <p class="platzi-parrafo">Proyecto Inspirado en el Curso de Animaciones CSS en:</p>
-                <a class="platzi-link">
+                <a class="platzi-link" href="https://platzi.com/cursos/animaciones-web/" target="_blank">
+                    <!-- 2 Contenedores que forman un cuadrado visible mediante sus bordes -->
+                    <!-- Se les aplico un @keyframe que modifica alternativamente su escala, visibilidad y tamaño -->
                     <div class="platzi-logo">
                         <div class="logo-top"></div>
                         <div class="logo-bottom"></div>
                     </div>
                     <span class="link-texto">Platzi</span>
-                </a>
-                <div class="menu-id"></div>
+                    <!-- Identinficador de seccion (visible desde la Seccion de Menu) -->
+                    <div class="menu-id" id="platzi-id"></div>
+                </a>                
             </section>
 
+            <!-- SECCION CON CORAZON / SPRITE ANIMADO -->
             <section class="seccion-corazon">
                 <p class="corazon-parrafo">
-                    ¿Te gusto?, Presiona el Corazón
+                    ¿Te Gusto? Presiona el Corazón!!
                 </p>
+                <!-- Contenedor con un Background-Image de Sprite (imagen compuesta por multiples imagenes) -->
+                <!-- Se le aplico un @keyframes que se mueve de izquierda a derecha en el ancho de la imagen medianta 28 pasos(steps) que son las imagenen dentro del Sprite -->
                 <div class="corazon" id="corazon"></div>
+                <!-- Identinficador de seccion (visible desde la Seccion de Menu) -->
                 <div class="menu-id"></div>
             </section>
         </footer>
     </div>
 
+    <!-- SECCION CON MODAL / ANIMACION DE ENTRADA Y SALIDA -->
     <section class="seccion-modal" id="seccionModal">
+        <!-- Contenedor que cubre todo el viewport y lo oscurece (por defecto no esta visible) -->
         <div class="capa" id="capaModal">
+            <!-- Contenedor / Modal. Se le aplico un @keyframes que lo "abre" trayendolo de fuera del viewport al centro de la capa y lo cierra a la inversa -->
             <div class="modal" id="modal">
                 <p class="modal-titulo">Modal Animado</p>
                 <p class="modal-contenido">Para cerrar el modal presiona el boton cerrar o da click en cualquier parte afuera del mismo.</p>

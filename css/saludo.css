@@ -58,3 +58,33 @@
     #btnPausePlay:active {
         transform: scale(0.9)
     }
+
+/* MEDIA QUERIES DE SECCION SALUDO */
+@media screen and (max-width: 768px) {
+    .saludo-circulo {
+        height: 130px;
+    }
+
+        .saludo {
+            font-size: 0.9em;
+        }
+
+    #btnPausePlay {
+        font-size: 23px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .saludo-circulo {
+        height: 110px;
+    }
+
+        .saludo {
+            font-size: 0.8em;
+        }
+
+    #btnPausePlay {
+        font-size: 18px;
+    }
+}
+/* MEDIA QUERIES DE SECCION SALUDO */

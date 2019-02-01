@@ -4,7 +4,6 @@
 
 footer {
     grid-area: footer;
-    border-radius: 5px 5px 0 0;
 
     display: grid;
     grid-template-columns: auto auto;
@@ -12,6 +11,7 @@ footer {
 
 .seccion-platzi {
     height: 120px;
+    margin-top: 20px;
     align-self: center;
     position: relative;
 }
@@ -25,15 +25,18 @@ footer {
     }
 
     .platzi-link {
+        text-decoration: none;
         display: flex;
+        position: relative;
     }
 
         .platzi-logo {
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
             margin: 0 0 0 20px; 
             transform: rotate(45deg);
 
+            /* Asigna la animacion de logo al elemento */
             animation: logo-platzi 2s alternate infinite ease-in-out;
         }
         
@@ -42,10 +45,11 @@ footer {
                 height: 60%;
                 
                 border-radius: 10px 10px 0 0;
-                border: 12px solid #87c739;
+                border: 10px solid #87c739;
                 border-bottom: none;
                 box-sizing: border-box;
 
+                /* Asigna la animacion que dara la forma de P al logo  */
                 animation: logo-platzi-top 2s alternate infinite 2.4s linear;
             }
             
@@ -54,7 +58,7 @@ footer {
                 height: 40%;
 
                 border-radius: 0 0 10px 10px;
-                border: 12px solid #87c739;
+                border: 10px solid #87c739;
                 border-top: none;
                 box-sizing: border-box;
             }
@@ -63,12 +67,13 @@ footer {
             margin-left: 10px;
             color: rgba(0, 0, 0, 0.7);
 
-            font-size: 4em;
+            font-size: 3.5em;
             font-weight: 700;
-            line-height: 45px;
+            line-height: 40px;
             letter-spacing: 2px;
         }
 
+/* ANIMACION DE LOGO */
 @keyframes logo-platzi {
     0% {
         transform: rotate(45deg) scale(1);
@@ -83,11 +88,136 @@ footer {
     }
 }
 
+/* ANIMACION ELEMENTO SUPERIOR DEL LOGO */
 @keyframes logo-platzi-top {
     40% {
         width: 100%;
     }
     60%, 100% {
-        width: calc(100% - 10px);
+        width: calc(100% - 20%);
     }
 }
+
+/* MEDIA QUERIES DE SECCION PLATZI */
+@media screen and (max-width: 1024px) {
+    .seccion-platzi {
+        height: 100px;
+        margin-top: 15px;
+    }
+
+        .platzi-parrafo {
+            font-size: .8em;
+        }
+            
+        .platzi-logo {
+            width: 40px;
+            height: 40px;
+        }
+                .logo-top {
+                    border-width: 9px;
+                }
+                
+                .logo-bottom {
+                    border-width: 9px;
+                }
+            
+            .link-texto {
+                margin-left: 10px;
+
+                font-size: 3em;
+                line-height: 35px;
+                letter-spacing: 1px;
+            }
+}
+
+@media screen and (max-width: 768px) {
+    footer {
+        grid-column-gap: 15px;
+    }
+
+    .seccion-platzi {
+        height: 80px;
+        margin-top: 10px;
+    }
+
+        .platzi-parrafo {
+            font-size: .7em;
+            margin-left: 7px;
+        }
+
+            .platzi-logo {
+                width: 30px;
+                height: 30px;
+                margin: 0 0 0 10px;
+            }
+
+            .logo-top {
+                border-width: 7px;
+                border-radius: 8px 8px 0 0;
+            }
+            
+            .logo-bottom {
+                border-width: 7px;
+                border-radius: 0 0 8px 8px;
+            }
+
+        .link-texto {
+            margin-left: 5px;
+
+            font-size: 2em;
+            line-height: 30px;
+            letter-spacing: 1px;
+        }
+}
+
+@media screen and (max-width: 480px) {
+    footer {
+        grid-column-gap: 15px;
+        grid-template: 60px 60px / 1fr;
+        grid-template-areas: "corazon" "platzi";
+        align-content: center;
+    }
+
+    .seccion-platzi {
+        height: 60px;
+        margin-top: 0;
+
+        grid-area: platzi;
+        justify-self: center;
+        justify-items: center
+    }
+
+        .platzi-parrafo {
+            font-size: .6em;
+            margin-left: 0;
+            margin-top: 0;
+        }
+
+        .platzi-link {
+            justify-content: center;
+        }
+
+            .platzi-logo {
+                width: 25px;
+                height: 25px;
+                margin: 0;
+            }
+
+            .logo-top {
+                border-width: 6px;
+                border-radius: 6px 6px 0 0;
+            }
+            
+            .logo-bottom {
+                border-width: 6px;
+                border-radius: 0 0 6px 6px;
+            }
+
+        .link-texto {
+            margin-left: 5px;
+
+            font-size: 1.8em;
+            line-height: 25px;
+        }
+}
+/* MEDIA QUERIES DE SECCION PLATZI */

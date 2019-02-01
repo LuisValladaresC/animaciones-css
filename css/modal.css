@@ -19,6 +19,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
+
+        will-change: background-color;
     }
     .capa.activa {
         background-color: rgba(0,0,0,.5);
@@ -42,7 +44,7 @@
                 margin: 10px 0 0;
                 
                 text-transform: uppercase;
-                font-size: 1.2em;
+                font-size: 1.1em;
                 font-weight: 700;
                 text-align: center;
             }
@@ -54,8 +56,8 @@
 
             .modal-boton {
                 height: 35px;
-                width: 100px;
-                margin-top: 15px;
+                width: 90px;
+                margin-top: 10px;
                 cursor: pointer;
                 font-size: 0.9em;
 
@@ -66,6 +68,7 @@
                 border: none;
             }
 
+/* ANIMACION DE ENTRADA PARA EL MODAL *//* Se asignara mediante JS */
 @keyframes modalIn {
     0% {
         transform: translateY(-2000px);
@@ -81,6 +84,7 @@
     }
 }
 
+/* ANIMACION DE SALIDA PARA EL MODAL *//* Se asignara mediante JS */
 @keyframes modalOut {
     0% {
         transform: translateY(5px);
@@ -95,3 +99,49 @@
         transform: translateY(-2000px);
     }
 }
+
+/* MEDIA QUERIES DE SECCION MODAL */
+@media screen and (max-width: 768px) {
+    .modal {
+        height: 180px;
+        width: 400px;
+    }
+
+        .modal-titulo {
+            font-size: 1em;
+        }
+        
+        .modal-contenido {
+            font-size: 0.9em;
+        }
+
+        .modal-boton {
+            height: 30px;
+            width: 80px;
+            margin-top: 5px;
+            font-size: 0.8em;
+        }
+}
+
+@media screen and (max-width: 480px) {
+    .modal {
+        height: 150px;
+        width: 300px;
+    }
+
+        .modal-titulo {
+            font-size: 0.9em;
+        }
+        
+        .modal-contenido {
+            font-size: 0.7em;
+        }
+
+        .modal-boton {
+            height: 25px;
+            width: 70px;
+            margin-top: 0;
+            font-size: 0.7em;
+        }
+}
+/* MEDIA QUERIES DE SECCION MODAL */
