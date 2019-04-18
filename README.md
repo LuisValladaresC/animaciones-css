@@ -37,7 +37,7 @@ Una animación se define como la transición entre un punto A y un punto B. Las 
 
 ## Transition 
 
-Define de manera resumida todas las propiedades que nos permitirán trabajar con una transición y se asignan mediante sus valores separados por un espacio.
+Una transicion sucede cuando existe un cambio en una o mas propiedades css asignadas a un selector, normalmente el cambio es de manera inmediata, pero mediante la propiedad *Transition* podremos personalizar como se visualizara. *Transition* define de manera resumida todas las propiedades que nos permitirán trabajar con una transición recibiendo como valor multiples valores separados por un espacio.
 
 Los valores que podemos utilizar para personalizar nuestra transición son:  
  		
@@ -48,19 +48,19 @@ Los valores que podemos utilizar para personalizar nuestra transición son:
 
 ~~~
 div { 
-	width: 100px;
-	height: 100px;
-	background-color: red;
-	
-	/* transition: duracion retardo propiedad(es) aceleracion */
-	transition: 2s 500ms background-color ease-in;
+   width: 100px;
+   height: 100px;
+   background-color: red;
+
+   transition: 2s 500ms background-color ease-in;
+   /* transition: duracion retardo propiedad(es) aceleracion */
 }
 
 div:hover {
-	background-color: blue;
+   background-color: blue;
 }
 ~~~
-Aquí estamos definiendo un cuadrado de 100*100 pixeles, con un color de fondo rojo, el cual, va a cambiar en su estado *:hover* a azul. El cambio entre un color y otro durara 2 segundo tendrá 500 milisegundos de retardo en su comienzo.
+*Aquí estamos definiendo un cuadrado de 100x100 pixeles, con un color de fondo rojo, el cual, va a cambiar en su estado :hover a azul. El cambio entre un color y otro durara 2 segundos y tendrá 500 milisegundos de retardo en su comienzo.*
 
 Para definir una transición también podemos usar directamente las sub-propiedades de *Transition*, las cuales son:
 
@@ -97,7 +97,7 @@ Para definir una transición también podemos usar directamente las sub-propieda
 
 ## transform
 
-Define una o varias transformaciones para un selector mediante ciertos valores que modifican la rotación en grados , el sesgado / inclinación en grados, la posición en X & Y y la escala o tamaño en base a porcentaje.
+Define una o varias transformaciones en un selector, las cuales, pueden ser su rotación en grados, el sesgado / inclinación en grados, la posición en X & Y y la escala / tamaño en base a porcentaje.
 
 <div  id='rotate'/>
 
@@ -158,29 +158,29 @@ Es una regla CSS que especifica el código de una animación. Las animaciones se
 ~~~
 /* Sintaxis */
 @keyframes nombre { 
-   0%{...}
-   100%{...} 
+   0%{ ... }
+   100%{ ... } 
 }
 ~~~
 ~~~
 /* Ejemplo */
 @keyframes animacionPersonalizada { 
-	0%{
-	   background-color: red;
-	   width: 100px;
-	}
-	35%{
-	   background-color: blue;
-	   width: 200px;
-	}
-	70%{
-	   background-color: red;
-	   width: 300px;
-	}
-	100%{
-	   background-color: blue;
-	   width: 400px;
-	}
+   0%{
+      background-color: red;
+      width: 100px;
+   }
+   35%{
+      background-color: blue;
+      width: 200px;
+   }
+   70%{
+      background-color: red;
+      width: 300px;
+   }
+   100%{
+      background-color: blue;
+      width: 400px;
+   }
 }
 ~~~
  Aquí estamos definiendo un @keyframes / animación, la cual, de comienzo tendrá un color de fondo rojo que ira cambiando alternativamente por un color azul, a la vez, definimos un ancho inicial de 100px que ira incrementando gradualmente hasta llegar a 400px.
@@ -208,24 +208,27 @@ Los valores que podemos utilizar para trabajar con un @keyframes (animación) so
 
 ~~~
 .cuadrado-animado {
-	width: 100px;
-	height: 100px;
-	background-color: red;
+   width: 100px;
+   height: 100px;
+   background-color: red;
   
-	/* Valores requeridos */
-	animation: mi-animacion 2s; 
+   /* Valores requeridos */
+   animation: mi-animacion 2s; 
 	
-	/* Valores requeridos + opcionales */
-	animation: mi-animacion 2s 1s 5 alternate ease-out forwards running;
+   /* Valores requeridos + opcionales */
+   animation: mi-animacion 2s 1s 5 alternate ease-out forwards;
 }
 
 @keyframes mi-animacion {
-	100% {
-		transform: scale(1.5);
-	}
+   0% {
+      transform: scale(1);
+   }
+   100% {
+      transform: scale(1.5);
+   }
 }
 ~~~
-Aquí estamos definiendo un @keyframes, el cual, escalara gradualmente un 150% el tamaño del elemento al que el selecto hace referencia. En el selector, es decir, la clase *cuadrado-animado* definimos mediante la propiedad *animation* el @keyframes (animación) que va a utilizar mediante el nombre (*mi-animacion*) con una duración de 2 segundos. Por otro lado como valores opcionales definimos un retardo de 1 segundo, se repetirá 5 veces, lo hará de manera alternativa, con una aceleración suave al final (ease-out), sus propiedades al final sera con la escala de 150% y su estado se corriendo (running)
+*Aquí estamos definiendo un @keyframes, el cual, escalara gradualmente un 150% el tamaño del elemento al que el selector hace referencia. En el selector, es decir, la clase 'cuadrado-animado' definimos mediante la propiedad 'animation' el @keyframes (animación) que va a utilizar mediante el nombre (mi-animacion) y ademas le asignamos una duración de 2 segundos. Por otro lado podemos y hemos añadido valores opcionales definiendo un retardo de 1 segundo, se repetirá 5 veces, lo hará de manera alternativa, con una aceleración suave al final (ease-out) y sus propiedades al final seran con la escala de 150%*
 
 Para definir un @keyframes en un selector también podemos usar las sub-propiedades de *Animation*, las cuales son:
 
@@ -301,26 +304,26 @@ Es una imagen gigante que tiene dentro múltiples imágenes, las cuales son idea
 
 ![Sprite utilizado en el Proyecto](https://luisvalladaresc.github.io/animaciones-css/sprite/corazon.png "Sprite utilizado en el Proyecto")
 
-*USO:* Este es un ejemplo de un sprite, los cuales, podemos utilizar como *background-image* en un contenedor de dimensiones especificas según el ancho y alto del sprite, de modo que muestre solo 1 imagen. Luego mediante un @keyframes (animacion) y la propiedad *background-position* podemos mover secuencial-mente su posición en X o Y. Para completar el proceso le definimos el @keyframes al selector asignando una aceleración (animation-timing-function) en etapas según las imágenes que tenga el sprite.
+*USO:* Este es un ejemplo de un sprite, los cuales, podemos utilizar como *background-image* en un contenedor de dimensiones especificas según el ancho y alto del sprite, de modo que muestre solo 1 imagen. Luego mediante un @keyframes (animacion) y la propiedad *background-position* podemos mover secuencial-mente su posición en X o Y. Para completar el proceso le definimos el @keyframes al selector, asignando una aceleración (animation-timing-function) en etapas según las imágenes que tenga el sprite.
 
 ~~~
 div.corazon {
-	width: 100px;
-	height: 100px;
-	background-image: url('https://luisvalladaresc.github.io/Animaciones-CSS/sprite/corazon.png');
+   width: 100px;
+   height: 100px;
+   background-image: url('https://luisvalladaresc.github.io/Animaciones-CSS/sprite/corazon.png');
 
-	animation: animacion-corazon 1s forwards;
-	animation-timing-function: steps(28);
+   animation: animacion-corazon 1s forwards;
+   animation-timing-function: steps(28);
 }
 
 /* ANIMACION DE CORAZON */
 @keyframes  animacion-corazon {
-	0% {
-		background-position: 0  0;
-	}
-	100% {
-		background-position-x: right;
-	}
+   0% {
+      background-position: 0  0;
+   }
+   100% {
+      background-position-x: right;
+   }
 }
 ~~~
 
@@ -340,11 +343,11 @@ Define una animación para un objeto HTML a través de 2 valores. El Primero es 
 const contenedor = document.getElementById("container");
 
 const animacionContenedor = contenedor.animate([
-	{ width: "100px", opacity: 1}, // 0%
-	{ width: "150px", opacity: 1}, // 25%
-	{ width: "200px", opacity: 0}, // 50%
-	{ width: "150px", opacity: 1}, // 75%
-	{ width: "100px", opacity: 1}, // 100%
+   { width: "100px", opacity: 1}, // 0%
+   { width: "150px", opacity: 1}, // 25%
+   { width: "200px", opacity: 0}, // 50%
+   { width: "150px", opacity: 1}, // 75%
+   { width: "100px", opacity: 1}, // 100%
 ], {duration: 2000});
 ~~~
 Aquí estamos definiendo una animación para el elemento con el id de *container*, el cual, aumentara su tamaño gradualmente de 100px a 200px y su visibilidad a 0 en su 50% y los restaura en su 100%.
